@@ -1,0 +1,24 @@
+{
+  "name": "ravepay",
+  "version": "0.0.0",
+  "description": "Node library for ravepay",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ravepay",
+    "flutterwave"
+  ],
+  "author": "4y0",
+  "license": "ISC",
+  "dependencies": {
+    "md5": "2.2.1",
+    "morx": "0.0.5",
+    "morx-cha": "0.0.3",
+    "node-forge": "0.7.1",
+    "q": "1.5.0",
+    "request": "2.81.0",
+    "sha.js": "2.4.8"
+  }
+}
