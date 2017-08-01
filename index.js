@@ -21,5 +21,4 @@ var Rave = function (public_key, public_secret, base_url_or_production_flag)
 
 } 
 
-
 module.exports = Rave;
