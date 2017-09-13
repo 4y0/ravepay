@@ -4,7 +4,6 @@ var q = require('q');
 var spec = morx.spec()
                 .build('id', 'required:true,validators:isNumeric, eg:7345')
 				.build('action', 'required:true, eg:void')
-                .build('SECKEY', 'required:true, eg:FLWPUBK-7adb6177bd71dd43c2efa3f1229e3b7f-X')
                 .end();
                 
 function service(data, _rave) {
@@ -19,6 +18,7 @@ function service(data, _rave) {
             return params;
         })
         .then(params => {
+            params.SECKEY = _rave.getSecretKey();
             return _rave.request('/flwv3-pug/getpaidx/api/refundorvoid', params);
         })
         .then(resp => {
