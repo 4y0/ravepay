@@ -195,7 +195,9 @@ var payload = {
 |phonenumber |This is the phone number of the card holder.|
 | IP | IP - Internet Protocol. This represents the IP address of where the transaction is being carried out.|
 
-With the payload set, call rave account charge method:
+
+
+> With the payload set, call rave account charge method:
 
 ```
 var payload3 = {
@@ -241,7 +243,7 @@ rave.Misc.getBanks().then(resp => {
 })
 ```
 
-Returns a response that looks like this:
+> Returns a response that looks like this:
 
 ```
 [
