@@ -138,19 +138,28 @@ We create a payload with public key, and transaction ref obtained from charge re
 
 > A complete code can be found here:
 
-````
+```
 Promise.all([
   rave.Card.charge(payload).then(resp => {
-    return resp.body.data.flwRef;
+    var response;
+    if(resp.body && resp.body.data && resp.body.data.flwRef){
+      response = resp.body.data.flwRef;
+    } else{
+      response = new Error("Couldn't get response, this is being fixed");
+      throw response;
+    }
+
+    return response;
   })
   .catch(err => {
-    console.log(err.message);
+    console.log("P: ",err.message);
   })
 ]).spread(ref => {
+  console.log("this is ref: ",ref);
   var payload2 = {
                 "PBFPubKey": "FLWPUBK-e634d14d9ded04eaf05d5b63a0a06d2f-X",
                 "transaction_reference": ref,
-                "otp": ""
+                "otp": "12345"
                 }
   rave.Card.validate(payload2).then(resp => {
       return resp.body;
@@ -225,7 +234,50 @@ rave.Account.charge(payload3).then(resp => {
 })
 ```
 
+## Preauthorisation
 
+### Preauth:
+```
+rave.Preauth.preauth(payload4).then(resp => {
+  console.log("Preauth response: "+resp.body);
+})
+.catch(err => {
+  console.log("preauth error: "+ err.message);
+})
+
+```
+
+### Void
+
+```
+rave.Preauth.void(payload).then(resp => {
+  // work with response
+})
+.catch(err => {
+  // handle error
+})
+```
+
+### Refund
+
+```
+rave.Preauth.refund(payload).then(resp => {
+  // work with response
+})
+.catch(err => {
+  // handle error
+})
+```
+
+### Capture
+```
+rave.Preauth.captureCard(payload).then(resp => {
+  // work with response
+})
+.catch(err => {
+  // handle error
+})
+```
 
 
 ## Integrity Checksum
