@@ -32,6 +32,4 @@ function newRefund(path, data, _rave) {
 
 }
 
-module.exports = {
-    newRefund: newRefund
-}
+module.exports = newRefund;
