@@ -5,6 +5,7 @@ var status   = require('./lib/rave.status');
 var mobile   = require('./lib/rave.mobile');
 var misc     = require('./lib/rave.misc');
 var preauth = require('./lib/rave.cardpreauth');
+var security = require('./lib/security');
 
 
 var Rave = function (public_key, public_secret, base_url_or_production_flag)
@@ -18,6 +19,7 @@ var Rave = function (public_key, public_secret, base_url_or_production_flag)
 	this.MobileOptions = new mobile(ravebase);
 	this.Misc          = new misc(ravebase);
 	this.Preauth 	   = new preauth(ravebase);
+	this.security      = security;
 
 	this.getIntegrityHash = function (data) { return ravebase.getIntegrityHash(data); }
 
