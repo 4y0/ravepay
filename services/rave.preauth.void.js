@@ -3,8 +3,9 @@ var q = require('q');
 
 var spec = morx.spec()
                 .build('id', 'required:false,validators:isNumeric, eg:7345')
-                .build('ref', 'required:false,validators:isNumeric, eg:7345')
-				.build('action', 'required:true, eg:void')
+                .build('ref', 'required:false, eg:7345')
+                .build('amount', 'required:false, eg:7345')
+				.build('action', 'required:false, eg:void')
                 .end();
                 
 function service(data, _rave) {
