@@ -1,6 +1,6 @@
 {
   "name": "ravepay",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Node library for ravepay",
   "main": "index.js",
   "scripts": {

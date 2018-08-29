@@ -21,7 +21,7 @@ function service(data, _rave){
 	.then( params  => {
 
 		params.PBFPubKey = _rave.getPublicKey();  
-		return _rave.request('flwv3-pug/getpaidx/api/validate', params)
+		return _rave.request('flwv3-pug/getpaidx/api/validatecharge', params)
 	})
 	.then( response => {
 
