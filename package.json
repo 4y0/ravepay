@@ -1,14 +1,15 @@
 {
   "name": "ravepay",
-  "version": "0.0.3",
-  "description": "Node library for ravepay",
+  "version": "1.0.1",
+  "description": "Node library for Rave by Flutterwave",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
   "keywords": [
     "ravepay",
-    "flutterwave"
+    "flutterwave",
+    "ravebyflutterwave"
   ],
   "author": "4y0",
   "license": "ISC",
